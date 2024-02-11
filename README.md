@@ -1,5 +1,5 @@
 # TODO:
 
-1. Frontend
-2. Turn into a HUGO deploy
-3. Make a simple blog funcionality
+1. Finish the Projects section
+2. Clen the CSS
+3. Add hover and animations
