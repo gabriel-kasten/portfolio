@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <title>Gabriel Kasten</title>
+</head>
+
+<style>
+    :root {
+        --vertical-general-margin: 26rem;
+
+        /* colors */
+        --primary: #030712;
+        --primary-variant: #485566;
+        --secondary: #f8fafc;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+
+        font-size: 18px;
+
+        margin-bottom: 4rem;
+    }
+
+    .header-cover {
+        height: 30vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+    .header-content {
+        margin: 0px var(--vertical-general-margin);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+    .profile-pic {
+        height: 14rem;
+        border-radius: 50%;
+        border: 6px solid var(--secondary);
+
+    }
+
+    .header-pic-title {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        position: relative;
+        bottom: 50px;
+    }
+
+    .header-title {
+        line-height: 0px
+    }
+
+
+    .header-title .name {
+        font-size: 48px;
+        font-weight: 700;
+
+    }
+
+    .header-title .description {
+        color: var(--primary-variant);
+    }
+
+    .action-buttons button {
+        background-color: var(--primary);
+
+        height: fit-content;
+        padding: 10px 18px;
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+
+        border: none;
+        outline: none;
+        border-radius: 12px;
+
+        position: relative;
+        bottom: 50px;
+
+        color: var(--secondary);
+
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .action-buttons button i {
+        color: var(--secondary);
+        font-size: 32px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .button-variant {
+        border: 2px solid #9faabb !important;
+        background-color: transparent !important;
+        color: var(--primary-variant) !important;
+    }
+
+    .button-variant i {
+        color: var(--primary-variant) !important;
+    }
+
+    main {
+        margin: 0px var(--vertical-general-margin);
+        position: relative;
+        bottom: 10px;
+    }
+
+    .experience {
+        line-height: 1rem;
+    }
+
+    .experience p {
+        color: var(--primary-variant);
+    }
+
+    hr {
+        border: 0.75px solid #e2e2e2;
+        margin: 4rem 0 4rem;
+    }
+
+    .about-me {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .about-me-description {
+        color: var(--primary-variant);
+    }
+
+    .about-me-description h2 {
+        color: var(--primary);
+        font-size: 1.5rem;
+
+        margin: 0px;
+    }
+
+    .about-me-description p {
+        line-height: 1.5rem;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .link-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .links a i {
+        position: relative;
+        top: 2px;
+    }
+
+    .links p,
+    a {
+        margin: 0px;
+        font-weight: 700;
+
+        text-decoration: none;
+        color: var(--primary);
+    }
+
+    .link-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 4rem;
+
+        height: 12rem;
+        width: 18rem;
+    }
+
+    .location-container {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        width: fit-content;
+    }
+
+    .link-title {
+        color: var(--primary-variant) !important;
+        font-weight: 700;
+    }
+
+    #flag {
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .job-experience {
+        margin-top: 3rem;
+    }
+
+    .job-experience .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .card {
+        border: 1px solid #e2e2e2;
+        padding: 1.5rem 2rem;
+        margin: 0px;
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        width: 30%;
+    }
+
+    .card p {
+        margin: 0px;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+
+        gap: 1rem;
+    }
+
+    .card-header img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .card-header .container {
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+    }
+
+    .card-header .container h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-header .card-container p,
+    .card .card-footer {
+        font-size: 1rem;
+        color: var(--primary-variant);
+        font-weight: 500;
+    }
+
+    .card-header .card-container h2,
+    .card-header .card-container p {
+        margin: 0px;
+    }
+
+    .job-experience-title {
+        font-size: 1.5rem;
+        margin: 0px;
+    }
+
+    /* in progress */
+
+    .works {
+        margin-top: 1rem;
+    }
+
+    .works .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .works .title h2 {
+        font-size: 1.5rem;
+    }
+
+    .works .title .view-more a i {
+        color: var(--primary);
+        position: relative;
+        top: 2px;
+    }
+</style>
+
+<body>
+    <header>
+        <img class="header-cover"
+            src="https://images.unsplash.com/photo-1706820642477-c7049e15876c?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="top-cover">
+        <div class="header-content">
+            <div class="header-pic-title">
+                <img src="assets/temp_image.jpeg    " alt="rounded-profile" class="profile-pic">
+                <div class="header-title">
+                    <p class="name">Gabriel Kasten</p>
+                    <p class="description">I'm a Data Analisty based in Santa Catarina Brasil</p>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="button-variant"><i class="ph ph-plant"></i>Garden</button>
+                <button><i class="ph ph-chats-circle"></i>Message</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="experience">
+            <h2>Experience</h2>
+            <p>I specialise in Data Analysis and Backend Development.</p>
+        </div>
+
+        <hr>
+
+        <div class="about-me">
+            <div class="about-me-description">
+                <h2>About me</h2>
+                <p>I'm a Data Analisty based in Santa Catarina, Brazil. I enjoy working with general porpuse data and
+                    get insigths from them.</p>
+                <p>I've worked with some of the world's most exciting companies, including BySeven, ToBe
+                    Consultoria,
+                    Acto Inteligência Imobiliaria and Unimed Federação de Santa Catarina. I'm passionate about helping
+                    startups grow and improve their knowledge through their unique data.</p>
+                <p>My main work tools are PowerBi, SQL, PLSQL, Python, Golang, HTML, JS, CSS and others.</p>
+            </div>
+
+            <div class="links">
+                <div class="link-col">
+                    <div class="location link-item">
+                        <p class="link-title">Location</p>
+                        <div class="location-container">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.medianigeria.com%2Fwp-content%2Fuploads%2F2018%2F02%2FBrazil-Flag-1067x747.png&f=1&nofb=1&ipt=1ed06db7dc07c641e6027a39a87bdf307c6034697cce2526013964fde06777fd&ipo=images"
+                                alt="flag" id="flag">
+                            <p>Santa Catarina, Brazil</p>
+                        </div>
+                    </div>
+                    <div class="link-item">
+                        <p class="link-title">Portfolio</p>
+                        <a href="#">@gabriel-kasten
+                            <i class="ph-bold ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="link-col">
+                    <div class="link-item">
+                        <p class="link-title">Github</p>
+                        <a href="#">gabriel-kasten
+                            <i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <div class="link-item">
+                        <p class="link-title">Email</p>
+                        <a href="#">gabrieldegkasten@gmail.com
+                            <i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="job-experience">
+            <h2 class="title">Job Experience</h2>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/unimed-logo.png" alt="enterprise-logo">
+                        <div class="card-container">
+                            <h2 class="title">Data Analisty</h2>
+                            <p>Unimed Federação Santa Catarina</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="date">Jul 2023 - Today</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/acto-logo.png" alt="enterprise-logo">
+                        <div class="card-container">
+                            <h2 class="title">Data Analisty</h2>
+                            <p>Acto Inteligência Imobiliaria</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="date">May 2023 - Jul 2023</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/byseven-logo.png" alt="enterprise-logo">
+                        <div class="card-container">
+                            <h2 class="title">Developer</h2>
+                            <p>BySeven | IT business and consulting</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="date">Fev 2022 - Jul 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="works">
+            <div class="title">
+                <h2>Works</h2>
+                <div class="view-more">
+                    <a href="#">View More
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="" alt="project-cover">
+                <div class="project-card-footer">
+                    <img src="" alt="project-card-footer-icon">
+                    <p>Dashboard</p>
+                    <a href="#"><img src="" alt="goto-icon"></a>
+                </div>
+            </div>
+        </div> -->
+    </main>
+</body>
+
+</html>
